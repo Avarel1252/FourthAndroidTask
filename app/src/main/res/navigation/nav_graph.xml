@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/viewPagerFragment">
+
+    <dialog
+        android:id="@+id/addContactFragment"
+        android:name="com.application4.ui.fragments.AddContactDialogFragment"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_add_contact"/>
+    <fragment
+        android:id="@+id/detailViewFragment"
+        android:name="com.application4.ui.fragments.DetailViewFragment"
+        android:label="fragment_detail_view"
+        tools:layout="@layout/fragment_detail_view">
+        <argument
+            android:name="targetUser"
+            app:argType="com.application4.models.UserModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.application4.ui.fragments.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" >
+        <action
+            android:id="@+id/action_viewPagerFragment_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_detailViewFragment"
+            app:destination="@id/detailViewFragment" />
+    </fragment>
+</navigation>

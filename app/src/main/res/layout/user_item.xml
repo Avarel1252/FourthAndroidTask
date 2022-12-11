@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/cardMargin"
+    android:elevation="@dimen/cardElevation"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="@dimen/cardCornerRadius"
+    app:contentPadding="@dimen/paddingIntoCard"
+    app:strokeColor="@color/gray_text2"
+    app:strokeWidth="@dimen/cardStrokeWidth">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_cardView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:flow_horizontalGap="@dimen/cardMargin"
+            app:constraint_referenced_ids="iv_accIcon,flow_user,btn_delete"
+            app:flow_horizontalStyle="spread_inside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_user"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:constraint_referenced_ids="tv_username,tv_career"
+            app:flow_horizontalGap="@dimen/paddingIntoCard"
+            app:flow_horizontalStyle="packed" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_accIcon"
+            android:layout_width="@dimen/accImgSize"
+            android:layout_height="@dimen/accImgSize"
+            android:src="@drawable/ic_acc_icon" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_username"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/username"
+            android:textAppearance="@style/Text.Input"
+            android:textColor="@color/gray_text1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_career"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/career"
+            android:textColor="@color/gray_text2"
+            />
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/alpha0"
+            android:src="@drawable/ic_trash_can" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
